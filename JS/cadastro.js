@@ -2,7 +2,7 @@ let email = document.querySelector("#email");
 let senha = document.querySelector("#senha");
 let senhaVerificada = document.querySelector("#senhaVerificada");
 
-document.querySelector("button").addEventListener("click", (e) => {
+document.querySelector("button").addEventListener("click", "submit",  (e) => {
   e.preventDefault();
   salvar(email.value, senha.value, senhaVerificada.value);
   

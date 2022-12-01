@@ -5,29 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./CSS/style.css">
     <title>Login</title>
 </head>
 
 <body>
-    <main>
-        <div class="img">
-            <img src="https://sendasurprise.co.za/wp-content/uploads/2020/07/MessageBottle.jpg" alt="imagem de login" srcset="">
-        </div>
-        <div class="login" id="login">
-            <h2>Login</h2>
-            <label for="email">Email</label>
-            <input type="email" id="email" paceholder="E-mail" required />
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" paceholder="" required />
-            <button onclick="entrar()"type="submit">Entrar</button>
-            <div class="link">
-                <a href="./cadastro.html">Cadastrar</a>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="titulo">Login</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" id="email" class="email" placeholder="Digite seu E-mail" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="senha" class="password" placeholder="Digite seu Password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash olho"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <button class="button" type="submit">Login</button>
+
+                    </div>
+                    <div class="login-signup">
+                        <span class="text">Não tem cadastro?</span>
+                        <a href="./cadastro.html" class="text signup-link">Cadastre-se agora</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </main>
-
-
+    </div>
 
     <script src="./JS/login.js"></script>
 </body>

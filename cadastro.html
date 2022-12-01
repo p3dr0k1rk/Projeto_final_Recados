@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Avaliação Final</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
-    <main>
-        <div class="img">
-            <img src="./img/MessageBottle.jpg" alt="imagem de login" srcset="">
-        </div>
-        <div class="login">
-            <h2>Criar Conta</h2>
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" placeholder="E-mail">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="senha" placeholder="Password">
-            <label for="password">Digite novamente o Password</label>
-            <input type="password" name="password" id="senhaVerificada" placeholder="Confirme o Password">
-            <button type="submit">Criar Conta</button>
-            <div class="link">
-                <a href="./Login.html">Login</a>
+    <fieldset class="container">
+        <div class="container">
+            <div class="forms">
+                <div class="form cadastro">
+                    <legend class="titulo">
+                        Cadastro
+                    </legend>
+    
+                    <form action="#">
+    
+                        <div class="input-field">
+                            <input type="email" id="email" placeholder="Digite seu E-mail" value="" required>
+                            <i class="uil uil-envelope icon"></i>
+    
+                        </div>
+    
+                        <div class="input-field">
+                            <input type="password" id="senha" placeholder="Digite um Password" value="" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash olho"></i>
+    
+                        </div>
+                        
+                        <div class="input-field">
+                            <input type="password" id="senhaVerificada" placeholder="Confirme o Password" value="" required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash olho"></i>
+    
+                        </div>
+                        <div>
+                            <p></p>
+                        </div>
+                        <div class="input-field button">
+                            <button class="buttons" type="submit">Criar Cadastro</button>
+    
+                        </div>
+                        <div class="login-signup">
+                            <a href="./Login.html" class="text login-link">Login</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </main>
+    </fieldset>
+    
 
 
-
-    <script src="./JS/conta.js"></script>
+    <script src="./JS/cadastro.js"></script>
 </body>
 
 </html>

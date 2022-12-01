@@ -6,87 +6,123 @@
   font-family: "Poppins", sans-serif;
 }
 
-/*Imagem*/
-.img {
-  width: 100%;
-  height: 100%;
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../IMG/message_bottle-wallpaper-1920x1080.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
-img {
+.container {
+  position: relative;
+  max-width: 430px;
   width: 100%;
-  height: 100%;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
 }
 
-/*centralizando*/
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(78,132,223,255);
-  display: flex;
-  overflow: hidden;
+.container .form {
+  padding: 30px;
 }
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
+.container .form .titulo {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
 }
-/*Login & Cadastro*/
-.login {
-  width: 100%;
-  height: 100%;
-  background-color:rgba(78,132,223,255);
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  justify-content: flex-end;
-}
-.login h2 {
-  font-size: 2.5rem;
-  align-self: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  color: rgb(29, 28, 28);
-  border-bottom: 2px solid rgb(48, 48, 48);
-}
-.login label {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: rgb(29, 28, 28);
-  margin-bottom: 0.5rem;
+.form .titulo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: #4070f4;
+  border-radius: 25px;
 }
 
-.login input {
-  padding: 10px;
-  font: 1.2rem "Poppins";
-  margin-bottom: 2rem;
-  height: 3rem;
+.form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 35px;
   border: none;
-  border-radius: 10px;
   outline: none;
-  transition: all 300ms ease;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
 }
-.login input:hover {
-  border: 1px solid rgb(168, 47, 255);
-}
-.link {
-  display: flex;
-  justify-content: space-evenly;
-}
-.link a {
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  transition: all 300ms ease;
-}
-.link a:hover {
-  color: red;
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: #4070f4;
 }
 
-.login button {
-  height: 4rem;
-  width: 100%;
-  border: none;
-  font-size: 1.2rem;
-  background-color: rgb(37, 78, 190);
-  border-radius: 10px;
-  cursor: pointer;
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
 }
+.input-field input:is(:focus, :valid) ~ i {
+  color: #4070f4;
+}
+.input-field i.icon {
+  left: 0;
+}
+.input-field i.olho {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form text {
+  color: #333;
+  font-size: 14px;
+}
+.form a.text {
+  color: #4070f4;
+  text-decoration: none;
+}
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form .button button {
+  margin-top: 35px;
+}
+
+.form .button button {
+  margin: 0 8px -2px 4px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button button:hover {
+  background-color: #265df2;
+}
+
+.form .login-signup {
+  margin-top: 30px;
+  text-align: center;
+}
+
