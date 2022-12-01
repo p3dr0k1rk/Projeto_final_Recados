@@ -30,7 +30,7 @@ function entrar() {
         return
 
     } else {(email.value === userValid.email && senha.value === userValid.senha)
-        window.location.href = '../recados.html'
+        window.location.href = './recados.html'
     }
 
     
