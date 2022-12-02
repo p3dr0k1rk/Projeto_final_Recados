@@ -17,6 +17,8 @@ function salvar(email, senha, senhaVerificada) {
     alert("Senhas não são iguais");
     return
   }
+  alert("Conta criada com sucesso")
+  window.location.href = './Login.html'
   
   let db = JSON.parse(localStorage.getItem("usuarios") || "[]");
   

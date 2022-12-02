@@ -1,38 +1,39 @@
-function entrar() {
-    let email = document.querySelector('#email')
+let logado = sessionStorage.getItem('logado');
+let listaUsuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
 
-    let senha = document.querySelector('#senha')
+let botaoLogin = document.getElementById('button');
 
+document.addEventListener('DOMContentLoaded', () => {
+    checarLogado();
 
-
-    let listaUser = []
-
-    let userValid = {
-
-         
-    }
-
-    listaUser = JSON.parse(localStorage.getItem('usuarios'))
-
-    listaUser.forEach((item) => {
-        if (email.value == item.email && senha.value == item.senha) {
-
-            userValid = {
-                email: item.email,
-                senha: item.senha
-            }
-
+    function checarLogado(){
+        if(logado) {
+            salvarSessao(logado);
+            window.location.href = "./recados.html";
         }
-    })
+    }
+})
 
-    if (email !== userValid.email && senha !== userValid.senha) {
-        alert("Preencha corretamente os campos!")
-        return
+botaoLogin.addEventListener('click', () => {
+    verificarLogin();
+})
 
-    } else {(email.value === userValid.email && senha.value === userValid.senha)
-        window.location.href = './recados.html'
+function verificarLogin(){
+    let emailHTML = document.getElementById('email');
+    let senhaHTML = document.getElementById('senha');
+
+    let user = listaUsuarios.find(
+        (valor) => valor.email === emailHTML.value && valor.senha === senhaHTML.value);
+
+    if(!user){
+        alert('E-mail ou Senha inválidos.');
+        return;
     }
 
-    
+    salvarSessao(emailHTML.value);
+    window.location.href = "./recados.html";
+}
 
+function salvarSessao(data) {
+    JSON.stringify(sessionStorage.setItem("logado", data));
 }
