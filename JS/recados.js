@@ -1,5 +1,3 @@
-//APRESENTAR
-
 let descricao = document.querySelector("#description");
 let detalhe = document.querySelector("#detail")
 
@@ -30,7 +28,6 @@ function guardar(descricao, detalhe) {
 
 
 }
-//APRESENTAR
 let tbody = document.querySelector("#tbody");
 const preencherTabela = () => {
   let db = JSON.parse(localStorage.getItem("recados") || "[]")
@@ -38,32 +35,38 @@ const preencherTabela = () => {
   for (let recado of db) {
     tbody.innerHTML += `
       <tr>
-        <th>${recado.id}</th>
-        <th>${recado.descricao}</th>
-        <th>${recado.detalhe}</th>
-        <th>
+        <td>${recado.id}</td>
+        <td>${recado.descricao}</th>
+        <td>${recado.detalhe}</th>
+        <td>
           <button class="btn1" onclick="editar(${recado.id})">editar</button>
           <button class="btn2" onclick="remover(${recado.id})">deletar</button>
-        </th>
+        </td>
       </tr>
     `
   }
 
 }
-/* const editar = (id) => {
-  let db = JSON.parse(localStorage.getItem("recados") || "[]")
-  const posicao = db.findIndex((el) => el.id === id)
-  //editar
-  db.edit(posicao, 1);
-  localStorage.setItem("recados", JSON.stringify(db))
-  preencherTabela();
-} */
+
+const editar = (id) => {
+
+  const recado = userLogado.recados[id];
+  
+  document.querySelector(`#descricao${id}`).innerHTML = `<input type="text" class="td-input-descricao" id="td-descricao${id}" autocomplete="off" placeholder="${recado.descricao}"></input>`;
+
+  document.querySelector(`#detalhamento${id}`).innerHTML = `<input type="text" class="td-input-detalhamento" id="td-detalhamento${id}" autocomplete="off" placeholder="${recado.detalhamento}"></input>`;
+
+  document.querySelector(`#btn-editar${id}`).innerHTML = `<button class="btn-editar" id="btn-editar${id}" onclick="salvarEdicaoRecado(${id})">SALVAR</button>`;
+
+  document.querySelector(`#btn-excluir${id}`).innerHTML = `<button class="btn-excluir" id="btn-excluir${id}" onclick="cancelar(${id})">CANCELAR</button>`;
+  
+}
+
 
 const remover = (id) => {
   let db = JSON.parse(localStorage.getItem("recados") || "[]");
-  //retorna a posição
   const posicao = db.findIndex((el) => el.id == id);
-  //remove
+ 
   db.splice(posicao, 1);
   localStorage.setItem("recados", JSON.stringify(db))
   preencherTabela();
